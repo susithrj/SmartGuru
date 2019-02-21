@@ -26,6 +26,7 @@ CREATE TABLE question(
     seq_no INT,
     question_desc VARCHAR(500) NOT NULL,
     difficulty_level VARCHAR(50),
+    points INT,
     PRIMARY KEY(question_id),
     FOREIGN KEY (lesson_id) REFERENCES lesson(lesson_id)
 );
@@ -53,6 +54,15 @@ CREATE TABLE user_answers(
 	FOREIGN KEY (question_id) REFERENCES question(question_id)
 );
 
+CREATE TABLE user_history(
+	username VARCHAR(50) NOT NULL,
+	lesson_id VARCHAR(30) NOT NULL,
+    score INT,
+    date DATE,
+	FOREIGN KEY (username) REFERENCES user(username),
+	FOREIGN KEY (lesson_id) REFERENCES lesson(lesson_id)
+);
+
 INSERT INTO lesson VALUES
 ('ls0001', 'Basics', 10, 5),
 ('ls0002', 'Loops', 10, 10),
@@ -61,11 +71,11 @@ INSERT INTO lesson VALUES
 ('ls0005', 'Threads', 10, 10);
 
 INSERT INTO question VALUES
-('qs0001', 'ls0001', 1, 'Sample Qestion 1','easy'),
-('qs0002', 'ls0001', 2, 'Sample Qestion 2','easy'),
-('qs0003', 'ls0001', 3, 'Sample Qestion 3','medium'),
-('qs0004', 'ls0001' , 4, 'Sample Qestion 4','easy'),
-('qs0005', 'ls0001', 5, 'Sample Qestion 5','hard');
+('qs0001', 'ls0001', 1, 'Sample Qestion 1','easy',1),
+('qs0002', 'ls0001', 2, 'Sample Qestion 2','easy',1),
+('qs0003', 'ls0001', 3, 'Sample Qestion 3','medium',3),
+('qs0004', 'ls0001' , 4, 'Sample Qestion 4','easy',1),
+('qs0005', 'ls0001', 5, 'Sample Qestion 5','hard',4);
 
 INSERT INTO options VALUES
 ('op0001', 'qs0001', 'option 1'),
@@ -96,4 +106,3 @@ INSERT INTO answer VALUES
 ('op0015', 'qs0004'),
 ('op0020', 'qs0005');
 
-DROP DATABASE SmartGuruDB;
