@@ -3,15 +3,11 @@
    session_start();
 ?>
 
-<?
-   // error_reporting(E_ALL);
-   // ini_set("display_errors", 1);
-?>
 
 <html lang = "en">
    
    <head>
-      <title>Tutorialspoint.com</title>
+      <title>Login</title>
       <link href = "css/bootstrap.min.css" rel = "stylesheet">
       
       <style>
