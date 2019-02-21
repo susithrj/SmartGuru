@@ -8,16 +8,14 @@
    
    <head>
       <title>Smart Guru | Login</title>
-      <link href = "css/bootstrap.min.css" rel = "stylesheet">
-      
+      <link href = "css/bootstrap.min.css" rel = "stylesheet"> 
      
    </head>
 	
    <body>
       
       <h2>Smart Guru</h2> 
-      <div class = "container form-signin">
-         
+      <div class = "container form-signin">   
          
       </div> <!-- /container -->
       
